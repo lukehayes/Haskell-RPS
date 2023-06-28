@@ -1,13 +1,14 @@
 module Format where
 
-border :: Int -> Int -> IO ()
-border n max
-  | n == 0 = do {
-            putStrLn "#"}
+{-
+  Module includes useful helper functions for outputing lines,
+  formating strings, titles etc.
+-}
 
-  | n <= max = do {
-            print "-";
-            border (n + 1) max}
+-- Print a string with a little formatting.
+p :: String -> IO ()
+p str = putStrLn $ "--- " ++ str ++ " --- \n"
+
 
 title :: String -> Int -> IO ()
 title s n
