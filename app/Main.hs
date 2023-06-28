@@ -3,5 +3,6 @@ module Main where
 import Format
 
 main :: IO ()
-main = do border 1 10
+main = do
+  title "-" 10
 
