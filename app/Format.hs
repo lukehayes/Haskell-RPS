@@ -9,3 +9,12 @@ border n max
             print "-";
             border (n + 1) max}
 
+title :: String -> Int -> IO ()
+title s n
+  | n < 10 = do {
+    print s;
+    title s (n + 1)
+  }
+  | n > 10 = putStrLn "#"
+
+
