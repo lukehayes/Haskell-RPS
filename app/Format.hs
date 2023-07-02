@@ -12,12 +12,13 @@ titleBox :: String -> String
 titleBox s = do
     "----------" ++ (title s) ++ "----------"
 
-title :: String -> Int -> IO ()
-title s n
-  | n < 10 = do {
-    print s;
-    title s (n + 1)
-  }
-  | n > 10 = putStrLn "#"
+recList :: (Show a) => [a] -> String
+recList [] = show "empty"
+recList [a] = show a
+recList (x:xs) = show x ++ " - " ++ recList xs
+  
 
+-- Print a string with a little formatting.
+p :: String -> IO ()
+p str = putStrLn $ "--- " ++ str ++ " --- \n"
 
