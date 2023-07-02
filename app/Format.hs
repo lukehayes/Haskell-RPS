@@ -5,10 +5,12 @@ module Format where
   formating strings, titles etc.
 -}
 
--- Print a string with a little formatting.
-p :: String -> IO ()
-p str = putStrLn $ "--- " ++ str ++ " --- \n"
+title :: String -> String
+title s = "--- " ++ s ++ " ---"
 
+titleBox :: String -> String
+titleBox s = do
+    "----------" ++ (title s) ++ "----------"
 
 title :: String -> Int -> IO ()
 title s n
