@@ -6,10 +6,17 @@ module Format where
 -}
 
 title :: String -> String
-title s = "--- " ++ s ++ " ---"
+title s = "---" ++ s ++ " ---"
+
+-- | Print a border of S strings N times.
+border :: String -> Int -> String
+border s n
+    | n > 1  = s ++ (border s (n-1))
+    | otherwise = s
 
 titleBox :: String -> String
 titleBox s = do
+
     "----------" ++ (title s) ++ "----------"
 
 recList :: (Show a) => [a] -> String
