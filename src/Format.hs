@@ -18,11 +18,6 @@ titleBox :: String -> String
 titleBox s = do
 
     "----------" ++ (title s) ++ "----------"
-
-recList :: (Show a) => [a] -> String
-recList [] = show "empty"
-recList [a] = show a
-recList (x:xs) = show x ++ " - " ++ recList xs
   
 
 -- Print a string with a little formatting.
